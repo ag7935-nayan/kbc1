@@ -1,23 +1,21 @@
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  vite: {
-    server: {
-      host: "0.0.0.0",
-      port: 10000,
-    },
+  plugins: [react()],
 
-    preview: {
-      host: "0.0.0.0",
-      port: 10000,
+  server: {
+    host: "0.0.0.0",
+    port: 10000,
+  },
 
-      allowedHosts: [
-        "kbc-main-main.onrender.com",
-      ],
-    },
+  preview: {
+    host: "0.0.0.0",
+    port: 10000,
+    allowedHosts: ["kbc-main-main.onrender.com"],
+  },
 
-    build: {
-      outDir: "dist",
-    },
+  build: {
+    outDir: "dist",
   },
 });
